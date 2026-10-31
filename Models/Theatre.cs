@@ -8,11 +8,11 @@ namespace MovieTicketBooking.Models
 
         [Required]
         [StringLength(150)]
-        public string? Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [Required]
         [StringLength(200)]
-        public string? Loction { get; set; }
+        public string Loction { get; set; } = string.Empty;
 
 
 
