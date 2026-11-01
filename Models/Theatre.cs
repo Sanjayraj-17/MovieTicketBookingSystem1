@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieTicketBooking.Models
 {
@@ -12,10 +13,7 @@ namespace MovieTicketBooking.Models
 
         [Required]
         [StringLength(200)]
-        public string Loction { get; set; } = string.Empty;
-
-
-
-     
+        public string Location { get; set; } = string.Empty;
     }
 }
+

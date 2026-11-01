@@ -1,6 +1,10 @@
 
 using Microsoft.EntityFrameworkCore;
 using MovieTicketBooking.Data;
+using MovieTicketBooking.Repositories;
+using MovieTicketBooking.Repositories.Interfaces;
+using MovieTicketBooking.Services;
+using MovieTicketBooking.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +14,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")
     )
 );
+// Register Repository
+builder.Services.AddScoped<ITheatreRepository, TheatreRepository>();
+
+// Register Service
+builder.Services.AddScoped<ITheatreService, TheatreService>();
 
 builder.Services.AddControllers();
 
